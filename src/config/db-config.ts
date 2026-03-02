@@ -3,12 +3,20 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
+// Helper to get env variable safely
+function getEnv(name: string): string {
+  const value = process.env[name];
+  if (!value) throw new Error(`Environment variable ${name} is missing`);
+  return value;
+}
+
 export const database = mysql.createPool({
-  host: process.env.DB_HOST || "localhost",
-  user: process.env.DB_USER || "pos_user",
-  password: process.env.DB_PASS || "MyRoot@2026",
-  database: process.env.DB_NAME || "1965_db",
-  port: Number(process.env.DB_PORT || 4455),
+  host: getEnv("DB_HOST"),
+  port: Number(getEnv("DB_PORT")),
+  user: getEnv("DB_USER"),
+  password: getEnv("DB_PASSWORD"),
+  database: getEnv("DB_NAME"),
+  multipleStatements: true,
 });
 
 (async () => {

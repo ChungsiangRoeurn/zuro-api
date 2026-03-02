@@ -1,5 +1,6 @@
 import "dotenv/config";
 import express from "express";
+import { MainRouter } from "./routers/index.ts";
 
 const app = express();
 app.use(express.json());
@@ -9,8 +10,10 @@ app.get("/", (req, res) => {
   res.send("Hello from API");
 });
 
-const PORT = process.env.PORT || 4455;
+app.use("/api", MainRouter);
 
-const server = app.listen(PORT, () => {
+const PORT = process.env.PORT;
+
+app.listen(PORT, () => {
   console.log(`Server running on 🗿 http://localhost:${PORT}`);
 });
