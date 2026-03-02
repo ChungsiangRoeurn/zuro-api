@@ -1,6 +1,6 @@
-# A Boilerplate POS API
+# Free POS API
 
-A clean, type-safe **Point-of-Sale (POS)** REST API built with modern TypeScript tools. Designed with maintainability, scalability, and best practices in mind. If you want empty project, just clone or switch to boilerplate repo and you will get what you want! 
+A clean, type-safe **Point-of-Sale (POS)** REST API built with modern TypeScript tools. Designed with maintainability, scalability, and best practices in mind. If you want empty project, just clone or switch to boilerplate repo and you will get what you want!
 
 ## Features
 
@@ -23,7 +23,7 @@ A clean, type-safe **Point-of-Sale (POS)** REST API built with modern TypeScript
 | Runtime         | Node.js           |
 | Dev server      | Nodemon + ts-node |
 | Package manager | pnpm              |
-| Authentication  | JWT               |
+| Authentication  | JWT & Bcrypt      |
 
 ## Project Architecture
 
@@ -32,11 +32,12 @@ src/
 ├── repositories/      # Data access layer - database queries
 ├── controllers/       # Request/response handling - HTTP layer
 ├── services/          # Business logic layer
-├── routes/            # Feature-based route definitions
+├── routers/            # Feature-based route definitions
 ├── middlewares/       # Validation, error handling, auth, etc.
 ├── utils/             # Helper functions & shared utilities
 ├── config/            # Database configurations & environment setup
 ├── database/          # Database scripts and migrations
+├── types/             # Global types for the project
 │   ├── db_schema.sql  # Database table schemas
 │   ├── migrate.ts     # Migration runner script
 │   ├── seed.ts        # Seed runner script
@@ -48,7 +49,7 @@ src/
 
 ```bash
 # Clone the repository
-git clone https://github.com/ChungsiangRoeurn/pos-api-boilerplate
+git clone https://github.com/ChungsiangRoeurn/zuro-api
 cd pos-api-boilerplate
 
 # Install dependencies
@@ -98,6 +99,7 @@ pnpm dev
 ## API Endpoints
 
 ### Authentication
+
 ```
 POST   /api/auth/register    # Register new user
 POST   /api/auth/login       # User login
@@ -105,6 +107,7 @@ POST   /api/auth/refresh     # Refresh access token
 ```
 
 ### Products
+
 ```
 GET    /api/products         # Get all products
 GET    /api/products/:id     # Get product by ID
@@ -114,11 +117,14 @@ DELETE /api/products/:id     # Delete product
 ```
 
 ### Orders
+
 ```
 GET    /api/orders           # Get all orders
 GET    /api/orders/:id       # Get order by ID
 POST   /api/orders           # Create new order
 PUT    /api/orders/:id       # Update order status
 ```
+
 # HAPPY CODING!
-Built with ❤️ using TypeScript and Express
+
+Built with ❤️ By JIANGSUNG
