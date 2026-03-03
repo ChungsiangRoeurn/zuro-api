@@ -1,5 +1,5 @@
-import { database } from "../config/db-config";
-import type { CreateUser } from "../types/auth-types.ts";
+import { database } from "../config/database-config";
+import type { CreateUser } from "../types/auth-type";
 
 export class AuthRepository {
   async createUser(data: CreateUser) {

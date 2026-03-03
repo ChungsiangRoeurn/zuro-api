@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { database } from "../config/db-config";
+import { database } from "../config/database-config";
 
 // Compute __dirname from project root to avoid using import.meta (which requires specific TS module settings)
 const __dirname = path.resolve(process.cwd(), "src", "database");

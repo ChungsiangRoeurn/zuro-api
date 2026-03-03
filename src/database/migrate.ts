@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { database } from "../config/db-config";
+import { database } from "../config/database-config";
 
 const __dirname = process.cwd();
 
