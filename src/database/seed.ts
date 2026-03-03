@@ -1,11 +1,9 @@
 import fs from "fs";
 import path from "path";
-import { fileURLToPath } from "url";
-import { database } from "../config/db-config.ts";
+import { database } from "../config/db-config";
 
-// ES Modules __dirname fix
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// Compute __dirname from project root to avoid using import.meta (which requires specific TS module settings)
+const __dirname = path.resolve(process.cwd(), "src", "database");
 
 const seedsPath = path.join(__dirname, "seeds");
 
