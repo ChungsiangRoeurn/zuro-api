@@ -1,4 +1,33 @@
-INSERT INTO products (name, price) VALUES
-('Laptop', 1200.00),
-('Phone', 799.99),
-('Headphones', 199.99);
+INSERT INTO products 
+(name, price, image_url, description, product_details, stock, created_at, updated_at) 
+VALUES
+('Gaming Laptop', 1500.00, 'https://res.cloudinary.com/dbm0zxjen/image/upload/v1772558467/gaming-laptop_wapmig.webp', 'High performance gaming laptop', '16GB RAM, 1TB SSD, RTX 4060', 15, NOW(), NOW()),
+('Business Laptop', 1100.00, 'https://res.cloudinary.com/dbm0zxjen/image/upload/v1772558467/business_pvto6w.webp', 'Lightweight business laptop', '8GB RAM, 512GB SSD, i5 processor', 20, NOW(), NOW()),
+('Smartphone Pro', 999.99, 'https://res.cloudinary.com/dbm0zxjen/image/upload/v1772558466/smart-phone_-lite_o99h9u.webp', 'Flagship smartphone', '256GB storage, 5G, OLED display', 30, NOW(), NOW()),
+('Smartphone Lite', 499.99, 'https://res.cloudinary.com/dbm0zxjen/image/upload/v1772558466/smart-phone_-lite_o99h9u.webp', 'Affordable smartphone', '128GB storage, 4G LTE', 40, NOW(), NOW()),
+('Wireless Headphones', 199.99, 'https://res.cloudinary.com/dbm0zxjen/image/upload/v1772558468/wireless-headphone_qupa1t.webp', 'Noise cancelling headphones', 'Bluetooth 5.2, 30h battery', 25, NOW(), NOW()),
+('Bluetooth Speaker', 149.99, 'https://res.cloudinary.com/dbm0zxjen/image/upload/v1772558466/bluetooh-speaker_d9z4nz.webp', 'Portable speaker', 'Waterproof, 12h battery', 35, NOW(), NOW()),
+('Mechanical Keyboard', 129.99, 'https://res.cloudinary.com/dbm0zxjen/image/upload/v1772558467/keyboard_dvoar1.webp', 'RGB mechanical keyboard', 'Blue switches, anti-ghosting', 18, NOW(), NOW()),
+('Gaming Mouse', 79.99, 'https://res.cloudinary.com/dbm0zxjen/image/upload/v1772558468/mouse_h20kec.webp', 'High precision gaming mouse', '16000 DPI, RGB lighting', 22, NOW(), NOW()),
+('4K Monitor', 399.99, 'https://res.cloudinary.com/dbm0zxjen/image/upload/v1772558468/monitor_z5pttk.webp', 'Ultra HD monitor', '27-inch IPS display', 12, NOW(), NOW()),
+('Full HD Monitor', 199.99, 'https://res.cloudinary.com/dbm0zxjen/image/upload/v1772558467/full-hd-monitor_tsnv91.webp', '1080p monitor', '24-inch LED display', 28, NOW(), NOW()),
+('External Hard Drive 1TB', 89.99, 'https://res.cloudinary.com/dbm0zxjen/image/upload/v1772558466/1T-hard_lickct.webp', 'Portable storage device', 'USB 3.0 compatible', 50, NOW(), NOW()),
+('External SSD 1TB', 159.99, 'https://res.cloudinary.com/dbm0zxjen/image/upload/v1772558466/1T-ssd_gjtdch.webp', 'Fast solid state drive', 'USB-C, high speed transfer', 32, NOW(), NOW()),
+('Smart Watch', 249.99, 'https://res.cloudinary.com/dbm0zxjen/image/upload/v1772558467/smart-watch_talhlg.webp', 'Fitness tracking smartwatch', 'Heart rate monitor, GPS', 26, NOW(), NOW()),
+('Tablet 10-inch', 349.99, 'https://res.cloudinary.com/dbm0zxjen/image/upload/v1772558467/10Inch_nfwrjx.webp', 'Android tablet', '128GB storage, 4GB RAM', 19, NOW(), NOW()),
+('Gaming Console', 499.99, 'https://res.cloudinary.com/dbm0zxjen/image/upload/v1772559232/gaming-laptop_rgucdm.webp', 'Next-gen console', '1TB storage, 4K gaming', 14, NOW(), NOW()),
+('Webcam HD', 59.99, 'https://res.cloudinary.com/dbm0zxjen/image/upload/v1772559248/webcam-hd_rpoct6.webp', '1080p webcam', 'Built-in microphone', 45, NOW(), NOW()),
+('Router WiFi 6', 179.99, 'https://res.cloudinary.com/dbm0zxjen/image/upload/v1772559240/router-wifi6_bioncl.webp', 'High-speed router', 'Dual band, WiFi 6 support', 23, NOW(), NOW()),
+('Power Bank 20000mAh', 49.99, 'https://res.cloudinary.com/dbm0zxjen/image/upload/v1772559240/powerbank_dbcqke.webp', 'Portable charger', 'Fast charging support', 60, NOW(), NOW()),
+('USB-C Hub', 39.99, 'https://res.cloudinary.com/dbm0zxjen/image/upload/v1772559247/use-c-hub_mhi1v4.webp', 'Multi-port adapter', 'HDMI, USB 3.0, SD card slot', 34, NOW(), NOW()),
+('Drone with Camera', 699.99, 'https://res.cloudinary.com/dbm0zxjen/image/upload/v1772559232/drone_gk9al4.webp', '4K camera drone', 'GPS, 30min flight time', 10, NOW(), NOW()),
+('Smart TV 55-inch', 799.99, 'https://res.cloudinary.com/dbm0zxjen/image/upload/v1772559241/smart-tv-5_o50luy.webp', '4K Smart TV', 'HDR, Android TV', 8, NOW(), NOW()),
+('Printer Wireless', 229.99, 'https://res.cloudinary.com/dbm0zxjen/image/upload/v1772559240/printer_fbomqo.webp', 'All-in-one printer', 'Scan, copy, print', 17, NOW(), NOW()),
+('Graphics Card RTX 4070', 699.99, 'https://res.cloudinary.com/dbm0zxjen/image/upload/v1772559233/Graphics-Card-RTX_q0zzgv.webp', 'High-end GPU', '12GB GDDR6X', 9, NOW(), NOW()),
+('RAM 16GB DDR4', 89.99, 'https://res.cloudinary.com/dbm0zxjen/image/upload/v1772559241/RAM_16GB_DDR4_nfuucr.webp', 'Desktop memory module', '3200MHz speed', 70, NOW(), NOW()),
+('Motherboard ATX', 199.99, 'https://res.cloudinary.com/dbm0zxjen/image/upload/v1772559233/Motherboard_ATX_q4eerj.webp', 'Gaming motherboard', 'Supports Intel 12th gen', 11, NOW(), NOW()),
+('Smart Home Camera', 129.99, 'https://res.cloudinary.com/dbm0zxjen/image/upload/v1772559241/Smart_Home_Camera_unn1mt.webp', 'Security camera', 'Night vision, mobile app control', 29, NOW(), NOW()),
+('VR Headset', 399.99, 'https://res.cloudinary.com/dbm0zxjen/image/upload/v1772559248/VR_Headset_vuclyw.webp', 'Virtual reality headset', 'High resolution display', 13, NOW(), NOW()),
+('Portable Projector', 299.99, 'https://res.cloudinary.com/dbm0zxjen/image/upload/v1772559240/Portable_Projector_molkjq.webp', 'Mini HD projector', 'Built-in speaker', 16, NOW(), NOW()),
+('Cooling Pad for Laptop', 29.99, 'https://res.cloudinary.com/dbm0zxjen/image/upload/v1772559231/Cooling_Pad_for_Laptop_ehtyoc.webp', 'Laptop cooling stand', 'Dual fan system', 55, NOW(), NOW()),
+('Electric Scooter', 899.99, 'https://res.cloudinary.com/dbm0zxjen/image/upload/v1772559232/Electric_Scooter_nytx4r.webp', 'Foldable electric scooter', '40km range, fast charging', 7, NOW(), NOW());
