@@ -1,7 +1,7 @@
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import { AuthRepository } from "../repository/auth-repo";
-import type { RegisterInput } from "../types/auth-types.ts";
+import type { RegisterInput } from "../types/auth-type";
 
 export class AuthService {
   private authRepository: AuthRepository;
