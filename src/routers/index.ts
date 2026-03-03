@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { AuthRouter } from "./auth-route.ts";
+import { AuthRouter } from "./auth-route";
 
 export const MainRouter: Router = Router();
 

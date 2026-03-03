@@ -1,4 +1,4 @@
-import { database } from "../config/db-config.ts";
+import { database } from "../config/db-config";
 import type { CreateUser } from "../types/auth-types.ts";
 
 export class AuthRepository {

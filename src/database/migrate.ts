@@ -1,12 +1,10 @@
 import fs from "fs";
 import path from "path";
-import { fileURLToPath } from "url";
-import { database } from "../config/db-config.ts";
+import { database } from "../config/db-config";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = process.cwd();
 
-const schemaFile = path.join(__dirname, "db_schema.sql");
+const schemaFile = path.join(__dirname, "src", "database", "db_schema.sql");
 
 async function runSchema() {
   // Check if file exists
