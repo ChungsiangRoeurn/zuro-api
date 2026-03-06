@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { ProductService } from "../services/product-service";
 import multer from "multer";
-import path from "path";
 import { Product } from "../types/product-type";
 
 const upload = multer({ dest: "uploads/" });
@@ -58,33 +57,36 @@ export class ProductController {
   }
 
   static async updateProduct(req: Request, res: Response) {
-  try {
-    const idParam = Array.isArray(req.params.id)
-      ? req.params.id[0]
-      : req.params.id;
+    try {
+      const idParam = Array.isArray(req.params.id)
+        ? req.params.id[0]
+        : req.params.id;
 
-    const id = parseInt(idParam as string, 10);
+      const id = parseInt(idParam as string, 10);
 
-    const { name, price, description, product_details, stock } = req.body;
+      const { name, price, description, product_details, stock } = req.body;
 
-    // Build partial object safely
-    const updateData: Partial<Product> = {};
-    if (name !== undefined) updateData.name = name;
-    if (price !== undefined && price !== "") updateData.price = parseFloat(price);
-    if (description !== undefined) updateData.description = description;
-    if (product_details !== undefined) updateData.product_details = product_details;
-    if (stock !== undefined && stock !== "") updateData.stock = parseInt(stock);
+      // Build partial object safely
+      const updateData: Partial<Product> = {};
+      if (name !== undefined) updateData.name = name;
+      if (price !== undefined && price !== "")
+        updateData.price = parseFloat(price);
+      if (description !== undefined) updateData.description = description;
+      if (product_details !== undefined)
+        updateData.product_details = product_details;
+      if (stock !== undefined && stock !== "")
+        updateData.stock = parseInt(stock);
 
-    const imagePath = req.file ? req.file.path : undefined;
+      const imagePath = req.file ? req.file.path : undefined;
 
-    await productService.updateProduct(id, updateData, imagePath);
+      await productService.updateProduct(id, updateData, imagePath);
 
-    res.json({ message: "Product updated" });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ message: "Failed to update product", error });
+      res.json({ message: "Product updated" });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: "Failed to update product", error });
+    }
   }
-}
 
   static async deleteProductById(req: Request, res: Response) {
     try {
