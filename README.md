@@ -28,21 +28,31 @@ A clean, type-safe **Point-of-Sale (POS)** REST API built with modern TypeScript
 ## Project Architecture
 
 ```
-src/
-├── repositories/      # Data access layer - database queries
-├── controllers/       # Request/response handling - HTTP layer
-├── services/          # Business logic layer
-├── routers/            # Feature-based route definitions
-├── middlewares/       # Validation, error handling, auth, etc.
-├── utils/             # Helper functions & shared utilities
-├── config/            # Database configurations & environment setup
-├── database/          # Database scripts and migrations
-├── types/             # Global types for the project
-│   ├── db_schema.sql  # Database table schemas
-│   ├── migrate.ts     # Migration runner script
-│   ├── seed.ts        # Seed runner script
-│   └── seeds/         # Seed data files
-└── server.ts          # Application entry point
+zuro-api
+│
+├── src/
+│   ├── repositories/
+│   ├── controllers/
+│   ├── services/
+│   ├── routers/
+│   ├── middlewares/
+│   ├── utils/
+│   ├── config/
+│   ├── database/
+│   │   ├── db_schema.sql
+│   │   ├── migrate.ts
+│   │   ├── seed.ts
+│   │   └── seeds/
+│   ├── types/
+│   └── server.ts
+│
+├── package.json
+├── pnpm-lock.yaml
+├── tsconfig.json
+│
+├── Dockerfile
+├── docker-compose.yml
+└── .dockerignore
 ```
 
 ## Quick Start
