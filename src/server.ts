@@ -18,13 +18,33 @@ app.use(
   }),
 );
 
-const __dirname = path.resolve();
-
-// ===== Serve Public Folder =====
-app.use(express.static(path.join(__dirname, "public")));
-
+// ===== Root Route =====
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/index.html"));
+  res.send(`<!doctype html>
+<html>
+  <head>
+    <title>API</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        font-size: 30px;
+        color: silver;
+        font-family: Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="center">API VERSION 1.0</div>
+  </body>
+</html>`);
 });
 
 app.use("/api", MainRouter);
