@@ -12,19 +12,19 @@ export class OrderRepository {
       0,
     );
 
-    // Insert into order table
     const [orderResult] = await database.execute(
-      `INSERT INTO orders (user_id, total ) VALUE (?, ?)`,
+      `INSERT INTO orders (user_id, total) VALUES (?, ?)`,
       [userId, total],
     );
 
     const orderId = (orderResult as any).insertId;
 
-    // Insert each item into order_items
     const insertedItems: OrderItem[] = [];
+
     for (const item of items) {
       const [itemResult] = await database.execute(
-        `INSERT INTO order_items (order_id, product_id, quantity, price) VALUES (?, ?, ?, ?)`,
+        `INSERT INTO order_items (order_id, product_id, quantity, price)
+         VALUES (?, ?, ?, ?)`,
         [orderId, item.product_id, item.quantity, item.price],
       );
 
@@ -37,11 +37,10 @@ export class OrderRepository {
       });
     }
 
-    // Return data out
     return {
       id: orderId,
-      user_id: orderId,
-      total: total,
+      user_id: userId,
+      total,
       status: "pending",
       items: insertedItems,
     };
@@ -73,13 +72,15 @@ export class OrderRepository {
       `SELECT * FROM orders WHERE id = ?`,
       [orderId],
     );
+
     const order = (orderRows as Order[])[0];
     if (!order) return null;
 
     const [itemRows] = await database.execute(
-      `SELECT * FROM order_items WHERE id = ?`,
+      `SELECT * FROM order_items WHERE order_id = ?`,
       [orderId],
     );
+
     return {
       ...order,
       items: itemRows as OrderItem[],

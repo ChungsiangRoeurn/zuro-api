@@ -26,10 +26,11 @@ export class OrderController {
         success: true,
         data: order,
       });
-    } catch (error: any) {
+    } catch (error) {
       res.status(400).json({
         success: false,
-        message: error.message,
+        message:
+          error instanceof Error ? error.message : "Something went wrong",
       });
     }
   };
@@ -45,10 +46,11 @@ export class OrderController {
         success: true,
         data: orders,
       });
-    } catch (error: any) {
+    } catch (error) {
       res.status(400).json({
         success: false,
-        message: error.message,
+        message:
+          error instanceof Error ? error.message : "Something went wrong",
       });
     }
   };
@@ -71,10 +73,11 @@ export class OrderController {
         success: true,
         data: order,
       });
-    } catch (error: any) {
+    } catch (error) {
       res.status(400).json({
         success: false,
-        message: error.message,
+        message:
+          error instanceof Error ? error.message : "Something went wrong",
       });
     }
   };
@@ -91,10 +94,11 @@ export class OrderController {
         success: true,
         message: "Order status updated",
       });
-    } catch (error: any) {
+    } catch (error) {
       res.status(400).json({
         success: false,
-        message: error.message,
+        message:
+          error instanceof Error ? error.message : "Something went wrong",
       });
     }
   };
