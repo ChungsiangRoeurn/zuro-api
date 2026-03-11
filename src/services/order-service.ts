@@ -42,12 +42,6 @@ export class OrderService {
       };
     });
 
-    // Calculate total
-    const total = items.reduce(
-      (sum, item) => sum + item.price * item.quantity,
-      0,
-    );
-
     // Create order using repository
     const order = await this.orderRepo.createOrder(userId, items);
 
